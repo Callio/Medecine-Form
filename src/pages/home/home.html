@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>
+        Sign Up
+      </ion-title>
+      <ion-buttons start>
+        <button ion-button icon-left (click)="prev()"><ion-icon name="arrow-back"></ion-icon> Prev</button>
+      </ion-buttons>
+      <ion-buttons end>
+        <button ion-button icon-right (click)="next()">Next <ion-icon name="arrow-forward"></ion-icon></button>
+      </ion-buttons>
+    </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+    <ion-slides #signupSlider>
+ 		<ion-slide>
+			<p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+			<ion-list no-lines>
+				<form [formGroup]="slideOneForm">
+					<ion-item>
+						<ion-label floating>First Name</ion-label>
+						<ion-input formControlName="firstName" type="text"></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label floating>Last Name</ion-label>
+						<ion-input formControlName="lastName" type="text"></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label floating>Age</ion-label>
+						<ion-input formControlName="age" type="number"></ion-input>
+					</ion-item>
+				</form>
+			</ion-list>
+		</ion-slide>
+		<ion-slide>
+ 
+		</ion-slide>
+    </ion-slides>
+</ion-content>
